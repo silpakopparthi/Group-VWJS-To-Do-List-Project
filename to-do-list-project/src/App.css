@@ -1,10 +1,162 @@
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100%;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
+} */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #51087E;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  align-content: center;
+  color:#EFDCF9;
+  font-family: "Dancing Script", cursive;
+}
+
+
+.btnAddnewtask,
+.btnSave,
+.btnCancel {
+  margin-top: 28px;
+  width: 150px;
+  height: 25px;
+  border-radius: 30px;
+  background: #6C0BA9;
+  border: none;
+  font-family: 'Montserrat';
+  font-size: 15px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+} */
+.nav-links {
+  align-content: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: large;
+ 
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  background-color:#B58DED;
+
+}
+
+.nav-links ol {
+  list-style: none;
+  margin: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links ol li {
+  padding: 10px;
+  font-size: 2rem;
+}
+/* 
+li {
+  /* float: right; 
+  display: flex;
+  flex-direction: row;
+} */
+
+/* .logo {
+  background-image: url(./images/todolist.png);
+} */
+
+li a {
+  display: flex;
+  flex-direction: row;
+  color: #EFDCF9;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+/* li a:hover {
+  background-color:#B58DED;
+} */
+
+.todoPage {
+  margin: 100px;
+}
+
+.newTaskItem {
+  /* display: grid;
+  grid-column: auto; */
+  /* grid-template-columns: 1fr 1fr; */
+  align-items: center;
+  margin: 10px;
+  display: inline-block;
+  border: 1px solid #B58DED;
+  border-radius: 10px;
+}
+
+.newTaskItemRow{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  justify-content: space-between;
+}
+
+.taskItemControl{
+  width:115px;
+}
+
+
+.listItemsTable {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-around; */
+  margin: 40px;
+   
+}
+
+.listHeader{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  color:#FFFFFF;
+  font-weight: bold;
+  background-color: #6C0BA9;
+  
+}
+
+.ListItems {
+ 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+  align-self: center;
+  align-content:space-around; */
+  
+}
+
+.ListItems:nth-child(odd) {
+  background-color: #B58DED;
+}
+
+.ListItems:nth-child(even) {
+  background-color: #EFDCF9;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -32,6 +184,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
