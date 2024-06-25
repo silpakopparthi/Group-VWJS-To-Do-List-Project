@@ -41,7 +41,7 @@ function ToDoPage(){
         }
         setlistItems([...listItems]);
     }
-    
+
     //Function that is called when the Add new item button is clicked
     const showToDoItem = (e)=>{
         //Displays the form to add a new item
@@ -52,9 +52,9 @@ function ToDoPage(){
     
     return(
         <div className="todoPage">
-            {/* Displays add new item button if the flag is true */}
+            {/* Display add new item button if the showAddNewItemButton flag is true */}
             {showAddNewItemButton===true && <button className="btnAddnewtask"  onClick={showToDoItem}>Add New Task</button>}
-            {/* Display the form to add a new item if the flag is true */}
+            {/* Display the add new item component to add a new item if the flag displayToDoItem is true */}
             {displayToDoItem===true && <ToDoItem addItemtoList = { addItemtoList }/>}
             <ToDoList listItems = {listItems}
              ondeleteItemFromList={deleteItemFromList}
