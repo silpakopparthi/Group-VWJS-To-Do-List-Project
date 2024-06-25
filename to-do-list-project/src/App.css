@@ -130,6 +130,15 @@ li a {
    
 }
 
+.sort-button{
+  background-color:#6C0BA9;
+  border-color: #6C0BA9;
+}
+.sort-button i{
+  font: size 30px;
+  color: #EFDCF9;
+}
+
 .listHeader{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

@@ -1,14 +1,17 @@
 import { useState } from "react";
 import ToDoItem from "./ToDoItem";
 
-function ToDoList({ listItems,ondeleteItemFromList}){
+function ToDoList({ listItems,ondeleteItemFromList,onsortItems}){
     
 
 const editTask = (e)=>{
     console.log(e.target.dataset.taskid);
 }
-const deleteItem = (e)=>{debugger;
+const deleteItem = (e)=>{
     ondeleteItemFromList(e.currentTarget.dataset.itemindex);
+}
+const sortItems = (e)=>{
+    onsortItems(e.currentTarget.dataset.sortdirection);
 }
 
 const displaySidePanel = (e)=>{
@@ -25,7 +28,9 @@ const displaySidePanel = (e)=>{
             <span>Description</span>
             <span>Assigned to</span>
             <span>Due date</span>
-            <span>Status</span>
+            <span>Status <button className="sort-button" data-sortdirection="asc" onClick={sortItems}><i className="fa fa-sort-asc"></i></button>
+            <button className="sort-button" data-sortdirection="desc" onClick={sortItems}><i className="fa fa-sort-desc"></i></button>
+            </span>
             <span></span>
             <span></span>
         </div>
