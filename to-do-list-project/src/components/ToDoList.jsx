@@ -1,14 +1,14 @@
 import { useState } from "react";
 import ToDoItem from "./ToDoItem";
 
-function ToDoList(props){
+function ToDoList({ listItems,ondeleteItemFromList}){
     
 
 const editTask = (e)=>{
     console.log(e.target.dataset.taskid);
 }
-const deleteTask = (e)=>{
-    console.log(e.target.dataset.taskid);
+const deleteItem = (e)=>{debugger;
+    ondeleteItemFromList(e.currentTarget.dataset.itemindex);
 }
 
 const displaySidePanel = (e)=>{
@@ -29,7 +29,7 @@ const displaySidePanel = (e)=>{
             <span></span>
             <span></span>
         </div>
-            {props.listItems.map((listItem, index) =>{
+            {listItems.map((listItem, index) =>{
                 return (
                     <div className="ListItems" key={index}>
                         <span>{listItem.itemID}</span>
@@ -38,7 +38,7 @@ const displaySidePanel = (e)=>{
                         <span>{listItem.assignee}</span>
                         <span>{listItem.duedate}</span>
                         <span>{listItem.status}</span>
-                        <span><button id="btnDelete" data-taskid={index} onClick={deleteTask}><i class="fa fa-trash-o"></i></button></span>
+                        <span><button id="btnDelete" data-itemid={listItem.itemID} data-itemindex={index} onClick={deleteItem}><i class="fa fa-trash-o"></i></button></span>
                         <span><button id="btnEdit" data-taskid={index} onClick={editTask}><i class="fa fa-edit"></i></button></span>
                     </div>
                 )

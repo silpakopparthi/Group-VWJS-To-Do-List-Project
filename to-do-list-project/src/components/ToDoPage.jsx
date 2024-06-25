@@ -22,6 +22,11 @@ function ToDoPage(){
         }
     }
 
+    const deleteItemFromList = (index)=> {
+        listItems.splice(index, 1);
+        setlistItems([...listItems]);
+    }
+
     const showToDoItem = (e)=>{
         setDisplayToDoItem(true);
         setshowAddNewItemButton(!showAddNewItemButton);
@@ -33,7 +38,8 @@ function ToDoPage(){
             {showAddNewItemButton===true && <button className="btnAddnewtask"  onClick={showToDoItem}>Add New Task</button>}
             
             {displayToDoItem===true && <ToDoItem addItemtoList = { addItemtoList }/>}
-            <ToDoList listItems = {listItems}/>
+            <ToDoList listItems = {listItems}
+             ondeleteItemFromList={deleteItemFromList}/>
         </div>
     )
 }
