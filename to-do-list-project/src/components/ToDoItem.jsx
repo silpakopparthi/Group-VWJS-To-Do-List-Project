@@ -4,8 +4,9 @@ const [title, setTitle] = useState("");
 const [description, setDescription] = useState("");
 const [status, setStatus] = useState("New");
 const [assignee, setAssignee] = useState("");
-const [duedate, setDuedate] = useState("currentDate");
-    const sendItem = ()=>{
+const [duedate, setDuedate] = useState();
+    const sendItem = (e)=>{
+        e.preventDefault();
         addItemtoList(title, description, status,assignee,duedate);
     }
     const cancelTask = ()=>{
@@ -14,10 +15,11 @@ const [duedate, setDuedate] = useState("currentDate");
     
     return(
     <>
+    <form onSubmit={sendItem}>
     <div className="newTaskItem">
         <div className="newTaskItemRow">
-        <label for="txtTitle">Title</label>
-        <input className="taskItemControl" type="text" id="txtTitle" value={title} onChange={(e)=> setTitle(e.target.value)}></input>
+        <label for="txtTitle">Title<super>*</super></label>
+        <input className="taskItemControl" type="text" id="txtTitle" value={title} onChange={(e)=> setTitle(e.target.value)} required></input>
         </div>
         <div className="newTaskItemRow">
         <label for="txtDesc">Description</label>
@@ -34,8 +36,8 @@ const [duedate, setDuedate] = useState("currentDate");
         </select>
         </div>
         <div className="newTaskItemRow">
-        <label for="ddlAssignee">Assigned to</label>
-        <select className="taskItemControl" id="ddlAssignee" onChange={(e)=>setAssignee(e.target.value)}>
+        <label for="ddlAssignee">Assigned to<super>*</super></label>
+        <select className="taskItemControl" id="ddlAssignee" onChange={(e)=>setAssignee(e.target.value)} required>
             <option value=""></option>
             <option value="Venkata">Venkata</option>
             <option value="Wenting">Wenting</option>
@@ -44,18 +46,16 @@ const [duedate, setDuedate] = useState("currentDate");
         </select>
         </div>
         <div className="newTaskItemRow">
-        <label for="dueDate">Due Date</label>
-        <input type="date" id="duedate" value={duedate} onChange={(e)=> setDuedate(e.target.value)}></input>
+        <label for="dueDate">Due Date<super>*</super></label>
+        <input type="date" id="duedate" min={new Date().toJSON().slice(0, 10)} value = {duedate} onChange={(e)=>setDuedate(e.target.value)} required></input>
         </div>
         <div className="newTaskItemRow">
-        <button className="btnSave" type="button" onClick={sendItem}>Save</button>
+        <input className="btnSave" type="submit"></input>
         &nbsp;&nbsp;
         <button className="btnCancel" type="button" onClick={cancelTask}>Cancel</button>
         </div>
-        {/* <button type="button" onClick={addItem}>Add</button> */}
-        {/* <label for="txtTitle">Title</label>
-        <input type="text"value=""></input> */}
     </div>
+    </form>
     </>
     )
 }
