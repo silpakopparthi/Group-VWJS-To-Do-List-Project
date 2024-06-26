@@ -66,15 +66,16 @@ function ToDoItem({
             ></textarea>
           </div>
           <div className="newTaskItemRow">
-            <label for="ddlStatus">Status</label>
+            <label for="ddlStatus">Status<super>*</super></label>
             <select
               className="taskItemControl"
-              id="ddlStatus"
+              id="ddlStatus" required
               value={editingItem?.status}
               onChange={(e) =>
                 setEditingItem({ ...editingItem, status: e.target.value })
               }
             >
+              <option value=""></option>
               <option value="New">New</option>
               <option value="In progress">In progress</option>
               <option value="Completed">Completed</option>

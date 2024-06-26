@@ -1,7 +1,7 @@
 import "./App.css";
-import Header from "./components/header";
+//import Header from "./components/header";
 import ToDoPage from "./components/ToDoPage";
-import Info from './components/Info';
+// import Info from './components/Info';
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       {/* <BrowserRouter>
         <Header />
         {/* <ToDoPage /> */}
-        {/* <Routes>
+      {/* <Routes>
           <Route path="/" element={<ToDoPage />} />
           <Route path="/info" element={<Info />} />
         </Routes>

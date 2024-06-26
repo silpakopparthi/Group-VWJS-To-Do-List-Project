@@ -21,7 +21,7 @@ function ToDoPage() {
   const addItemtoList = (title, description, status, assignee, duedate) => {
     setDisplayToDoItem(false);
     //Display the add button again when a new item is added
-    setshowAddNewItemButton(!showAddNewItemButton);
+    setshowAddNewItemButton(true);
     if (title !== "") {
       let itemObj = {
         itemID: Math.floor(Math.random() * 1000),
@@ -43,6 +43,7 @@ function ToDoPage() {
     assignee,
     duedate
   ) => {
+    setshowAddNewItemButton(true);
     const newItemList = listItems.map((item) => {
       if (item.itemID === itemID) {
         item.title = title;
@@ -87,36 +88,36 @@ function ToDoPage() {
 
   return (
     <>
-    <Header navigatePage={navigatePage}/>
-    <div className="todoPage">
-      {navigatetoPage === "info" && (<Info/>)}
-      {/* Display add new item button if the showAddNewItemButton flag is true */}
-      {navigatetoPage === "home" && showAddNewItemButton === true && (
-        <button className="btnAddnewtask" onClick={showToDoItem}>
-          Add New Task
-        </button>
-      )}
-      {/* Display the add new item component to add a new item if the flag displayToDoItem is true */}
-      {navigatetoPage === "home" && displayToDoItem === true && (
-        <ToDoItem
-          editingItem={editingItem}
-          setEditingItem={setEditingItem}
-          addItemtoList={addItemtoList}
-          isEditing={isEditing}
-          udpateItemList={udpateItemList}
+      <Header navigatePage={navigatePage} />
+      <div className="todoPage">
+        {navigatetoPage === "info" && (<Info />)}
+        {/* Display add new item button if the showAddNewItemButton flag is true */}
+        {navigatetoPage === "home" && showAddNewItemButton === true && (
+          <button className="btnAddnewtask" onClick={showToDoItem}>
+            Add New Task
+          </button>
+        )}
+        {/* Display the add new item component to add a new item if the flag displayToDoItem is true */}
+        {navigatetoPage === "home" && displayToDoItem === true && (
+          <ToDoItem
+            editingItem={editingItem}
+            setEditingItem={setEditingItem}
+            addItemtoList={addItemtoList}
+            isEditing={isEditing}
+            udpateItemList={udpateItemList}
+            setDisplayToDoItem={setDisplayToDoItem}
+            setIsEditing={setIsEditing}
+          />
+        )}
+        {navigatetoPage === "home" && <ToDoList
+          listItems={listItems}
+          ondeleteItemFromList={deleteItemFromList}
+          onsortItems={sortItems}
           setDisplayToDoItem={setDisplayToDoItem}
+          setEditingItem={setEditingItem}
           setIsEditing={setIsEditing}
-        />
-      )}
-      {navigatetoPage === "home" && <ToDoList
-        listItems={listItems}
-        ondeleteItemFromList={deleteItemFromList}
-        onsortItems={sortItems}
-        setDisplayToDoItem={setDisplayToDoItem}
-        setEditingItem={setEditingItem}
-        setIsEditing={setIsEditing}
-      />}
-    </div>
+        />}
+      </div>
     </>
   );
 }
