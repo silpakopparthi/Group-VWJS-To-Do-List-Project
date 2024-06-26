@@ -1,17 +1,20 @@
 import "./App.css";
 import Header from "./components/header";
 import ToDoPage from "./components/ToDoPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Info from './components/Info';
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      < ToDoPage />
+      {/* <BrowserRouter>
         <Header />
-        <Routes>
+        {/* <ToDoPage /> */}
+        {/* <Routes>
           <Route path="/" element={<ToDoPage />} />
-          {/* <Route path="/info" element={<InfoPage />} /> */}
+          <Route path="/info" element={<Info />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> } */}
     </div>
   );
 }

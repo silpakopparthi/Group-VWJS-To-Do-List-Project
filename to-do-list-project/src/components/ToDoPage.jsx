@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ToDoItem from "./ToDoItem";
 import ToDoList from "./ToDoList";
+import Header from "./header";
+import Info from "./Info";
 //Parent component that hosts ToDoItem and ToDoList child components
 function ToDoPage() {
   const [displayToDoItem, setDisplayToDoItem] = useState(false);
@@ -12,6 +14,9 @@ function ToDoPage() {
   const [isEditing, setIsEditing] = useState(false);
   //Flag to hold if the add new item button has to be shown
   const [showAddNewItemButton, setshowAddNewItemButton] = useState(true);
+  //Defines navigation page
+  const [navigatetoPage, setnavigatetoPage] = useState("home");
+  //Holds info data
   //Function called from the child object to add a new item to the litsitems array
   const addItemtoList = (title, description, status, assignee, duedate) => {
     setDisplayToDoItem(false);
@@ -76,17 +81,23 @@ function ToDoPage() {
     //Hides add new item button
     setshowAddNewItemButton(!showAddNewItemButton);
   };
+  const navigatePage = (page) => {
+    setnavigatetoPage(page);
+  }
 
   return (
+    <>
+    <Header navigatePage={navigatePage}/>
     <div className="todoPage">
+      {navigatetoPage === "info" && (<Info/>)}
       {/* Display add new item button if the showAddNewItemButton flag is true */}
-      {showAddNewItemButton === true && (
+      {navigatetoPage === "home" && showAddNewItemButton === true && (
         <button className="btnAddnewtask" onClick={showToDoItem}>
           Add New Task
         </button>
       )}
       {/* Display the add new item component to add a new item if the flag displayToDoItem is true */}
-      {displayToDoItem === true && (
+      {navigatetoPage === "home" && displayToDoItem === true && (
         <ToDoItem
           editingItem={editingItem}
           setEditingItem={setEditingItem}
@@ -97,15 +108,16 @@ function ToDoPage() {
           setIsEditing={setIsEditing}
         />
       )}
-      <ToDoList
+      {navigatetoPage === "home" && <ToDoList
         listItems={listItems}
         ondeleteItemFromList={deleteItemFromList}
         onsortItems={sortItems}
         setDisplayToDoItem={setDisplayToDoItem}
         setEditingItem={setEditingItem}
         setIsEditing={setIsEditing}
-      />
+      />}
     </div>
+    </>
   );
 }
 export default ToDoPage;
