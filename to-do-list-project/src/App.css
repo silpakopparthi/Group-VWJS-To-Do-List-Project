@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  height: 100vh;
+  height: 150vh;
   width: 100%;
   background-color: #EFDCF9;
 }
@@ -98,6 +98,7 @@ li a {
 
 .todoPage {
   margin: 100px;
+  background-color: #EFDCF9;
 }
 
 .newTaskItem {
