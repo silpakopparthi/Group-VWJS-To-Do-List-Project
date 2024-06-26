@@ -23,6 +23,9 @@
   color:#EFDCF9;
   font-family: "Dancing Script", cursive;
 }
+.header-title{
+  margin-left: 10px;;
+}
 
 
 .btnAddnewtask,
@@ -171,6 +174,13 @@ super{
 .ListItems:nth-child(even) {
   background-color: #EFDCF9;
 }
+.systemview{
+  visibility: visible;
+}
+
+.mobileview{
+  visibility:hidden;
+}
 
 @media only screen and (max-width: 500px) {
   .nav-links ol {
@@ -194,7 +204,7 @@ super{
 
   .listHeader{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     color:#FFFFFF;
     font-weight: bold;
     background-color: #6C0BA9;
@@ -203,7 +213,15 @@ super{
   .ListItems {
  
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .systemview{
+    visibility: hidden;
+  }
+
+  .mobileview{
+    visibility:visible;
   }
 }
  

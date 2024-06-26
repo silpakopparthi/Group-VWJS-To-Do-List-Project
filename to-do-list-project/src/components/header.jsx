@@ -13,7 +13,7 @@ function Header({ navigatePage }) {
         <img src="/images/todolist.png" className="logo" alt="logo" />
       </Link> */}
       {/* <img src= {Logo} alt ="logo"/> */}
-      <h1>To Do List</h1>
+      <h1 className="header-title">To Do List</h1>
       <nav className="nav-links">
         <ol>
           <li>

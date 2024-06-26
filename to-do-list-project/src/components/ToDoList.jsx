@@ -13,6 +13,10 @@ function ToDoList({
     setDisplayToDoItem(true);
     setIsEditing(true);
   };
+  const viewTask = (listItem) => {
+    setEditingItem(listItem);
+    setDisplayToDoItem(true);
+ };
   const deleteItem = (e) => {
     ondeleteItemFromList(e.currentTarget.dataset.itemindex);
   };
@@ -26,7 +30,7 @@ function ToDoList({
 
   return (
     <>
-      {/* <ToDoItem addItemtoList = { addItemtoList }/>  */}
+    <div className="systemview">
       <div className="listItemsTable">
         <div className="listHeader">
           <span>ID</span>
@@ -87,6 +91,67 @@ function ToDoList({
             </div>
           );
         })}
+      </div>
+      
+      </div>
+      <div className="mobileview">
+      <div className="listItemsTable">
+        <div className="listHeader">
+          <span>Title</span>
+          <span>Assignee</span>
+          <span>
+            Status{" "}
+            <button
+              className="sort-button"
+              data-sortdirection="asc"
+              onClick={sortItems}
+            >
+              <i className="fa fa-sort-asc"></i>
+            </button>
+            <button
+              className="sort-button"
+              data-sortdirection="desc"
+              onClick={sortItems}
+            >
+              <i className="fa fa-sort-desc"></i>
+            </button>
+          </span>
+          <span></span>
+          <span></span>
+        </div>
+        {listItems.map((listItem, index) => {
+          return (
+            <div className="ListItems" key={index}>
+              <span><a href="#" onClick={() => {
+                  viewTask(listItem);
+                }}>{listItem.title}</a></span>
+              <span>{listItem.assignee}</span>
+              <span>{listItem.status}</span>
+              <span>
+                <button
+                  id="btnDelete"
+                  data-itemid={listItem.itemID}
+                  data-itemindex={index}
+                  onClick={deleteItem}
+                >
+                  <i class="fa fa-trash-o"></i>
+                </button>
+              </span>
+              <span>
+                <button
+                  id="btnEdit"
+                  data-taskid={index}
+                  onClick={() => {
+                    editTask(listItem);
+                  }}
+                >
+                  <i class="fa fa-edit"></i>
+                </button>
+              </span>
+            </div>
+          );
+        })}
+      </div>
       </div>
     </>
   );
