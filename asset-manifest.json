@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Group-VWJS-To-Do-List-Project/static/css/main.2d22074f.css",
-    "main.js": "/Group-VWJS-To-Do-List-Project/static/js/main.b3bb9347.js",
+    "main.css": "/Group-VWJS-To-Do-List-Project/static/css/main.edccf33d.css",
+    "main.js": "/Group-VWJS-To-Do-List-Project/static/js/main.d941fad1.js",
     "static/js/453.a520ede3.chunk.js": "/Group-VWJS-To-Do-List-Project/static/js/453.a520ede3.chunk.js",
     "index.html": "/Group-VWJS-To-Do-List-Project/index.html",
-    "main.2d22074f.css.map": "/Group-VWJS-To-Do-List-Project/static/css/main.2d22074f.css.map",
-    "main.b3bb9347.js.map": "/Group-VWJS-To-Do-List-Project/static/js/main.b3bb9347.js.map",
+    "main.edccf33d.css.map": "/Group-VWJS-To-Do-List-Project/static/css/main.edccf33d.css.map",
+    "main.d941fad1.js.map": "/Group-VWJS-To-Do-List-Project/static/js/main.d941fad1.js.map",
     "453.a520ede3.chunk.js.map": "/Group-VWJS-To-Do-List-Project/static/js/453.a520ede3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d22074f.css",
-    "static/js/main.b3bb9347.js"
+    "static/css/main.edccf33d.css",
+    "static/js/main.d941fad1.js"
   ]
 }
