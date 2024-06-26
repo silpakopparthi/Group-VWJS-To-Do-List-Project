@@ -1,20 +1,30 @@
-import React from 'react';
+import React from "react";
 //import Logo from './images/todolist.png';
-
-function Header(){
-    return(
-<div className="header">
-        <img src="./images/todolist.png" className='logo' alt ="logo" /> 
-        <h1>To Do List</h1>
-        <nav className="nav-links">
+import { Link } from "react-router-dom";
+function Header() {
+  return (
+    <div className="header">
+      <Link to="/">
+        <img src="./images/todolist.png" className="logo" alt="logo" />
+      </Link>
+      <h1>To Do List</h1>
+      <nav className="nav-links">
         <ol>
-            <li><a href="#home">Home</a></li>
-
-            <li><a href="#info">Info</a></li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/info">Info</Link>
+          </li>
         </ol>
-        </nav>
-        </div>
-    )
+      </nav>
+    </div>
+  );
 }
-
 export default Header;
+
+
+
+
+
+
