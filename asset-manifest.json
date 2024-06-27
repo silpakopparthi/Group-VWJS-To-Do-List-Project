@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Group-VWJS-To-Do-List-Project/static/css/main.cba7ce6f.css",
+    "main.css": "/Group-VWJS-To-Do-List-Project/static/css/main.74749c7d.css",
     "main.js": "/Group-VWJS-To-Do-List-Project/static/js/main.6206a910.js",
     "static/js/453.a520ede3.chunk.js": "/Group-VWJS-To-Do-List-Project/static/js/453.a520ede3.chunk.js",
     "index.html": "/Group-VWJS-To-Do-List-Project/index.html",
-    "main.cba7ce6f.css.map": "/Group-VWJS-To-Do-List-Project/static/css/main.cba7ce6f.css.map",
+    "main.74749c7d.css.map": "/Group-VWJS-To-Do-List-Project/static/css/main.74749c7d.css.map",
     "main.6206a910.js.map": "/Group-VWJS-To-Do-List-Project/static/js/main.6206a910.js.map",
     "453.a520ede3.chunk.js.map": "/Group-VWJS-To-Do-List-Project/static/js/453.a520ede3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cba7ce6f.css",
+    "static/css/main.74749c7d.css",
     "static/js/main.6206a910.js"
   ]
 }
